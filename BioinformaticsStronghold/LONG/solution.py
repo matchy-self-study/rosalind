@@ -27,7 +27,7 @@ def concat_str(s1: str, s2: str) -> str:
         if s1[-i:] == s2[:i]:
             return s1 + s2[i:]
 
-parser = argparse.ArgumentParser(description='Construct level 3 overlap graph for the given input fastafile and print all edges to file')
+parser = argparse.ArgumentParser(description='Construct genome assembly of the reads input')
 parser.add_argument('input', type=str, help='Input fasta file')
 parser.add_argument('-o', '--output', type=argparse.FileType('w'), default=sys.stdout, help='Output file')
 
