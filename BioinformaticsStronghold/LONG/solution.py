@@ -21,12 +21,6 @@ def read_fasta(filename: str) -> dict:
             id_dna_map[curr_id] += l.rstrip()
     return id_dna_map
 
-def concat_str(s1: str, s2: str) -> str:
-    m = min(len(s1), len(s2))
-    for i in range(m, 0, -1):
-        if s1[-i:] == s2[:i]:
-            return s1 + s2[i:]
-
 parser = argparse.ArgumentParser(description='Construct genome assembly of the reads input')
 parser.add_argument('input', type=str, help='Input fasta file')
 parser.add_argument('-o', '--output', type=argparse.FileType('w'), default=sys.stdout, help='Output file')
